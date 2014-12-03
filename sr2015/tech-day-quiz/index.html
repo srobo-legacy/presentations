@@ -276,7 +276,7 @@ while True
                 </section>
 
                 <section data-background="rgb(30, 130, 76)">
-                    <h1><code>-100.0 to 100.0</code></h1>
+                    <h1><code>-100 to 100</code></h1>
                 </section>
 
                 <section data-background="rgb(239, 72, 54)">
@@ -305,19 +305,19 @@ while True
                 <section data-background="rgb(142, 68, 173)">
                     <h1>The robot wants to turn a servo!</h1>
                     <p>Write the code to do this.</p>
-                </section data-background="rgb(142, 68, 173)">
+                </section>
 
                 <section data-background="rgb(142, 68, 173)">
-                    <pre>from sr.robot import *
+                    <pre><code>from sr.robot import *
 import time
 
 R = Robot()
 
 while True:
-    R.servos[0][0] = 50.0
+    R.servos[0][0] = 50
     time.sleep(1)
-    R.servos[0][0] = -50.0
-    time.sleep(1)</pre>
+    R.servos[0][0] = -50
+    time.sleep(1)</code></pre>
                 </section>
 
                 <section data-background="rgb(20, 20, 20)">
