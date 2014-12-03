@@ -175,15 +175,15 @@
                 </section>
 
                 <section data-background="rgb(207, 0, 15)">
-                    <pre># look.py
+                    <pre><code># look.py
 from __future__ import print_function
 
 def look_at_things(R):
     markers = R.see
     print("I can see", len(markers), "markers:")
-    return len(markers)</pre>
+    return len(markers)</code></pre>
 
-                    <pre># robot.py
+                    <pre><code># robot.py
 from sr import *
 import look.py
 
@@ -196,7 +196,7 @@ while True
        time.sleep(2,5)
        R.motors[0].m0 = 0
        R.motors[1].m0 = 0
-       …</pre>
+       …</code></pre>
                 </section>
 
                 <section data-background="rgb(207, 0, 15)">
@@ -446,6 +446,7 @@ while True:
             </div>
         </div>
 
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
         <script src="bower_components/reveal.js/js/reveal.min.js"></script>
 
         <script>
@@ -455,7 +456,13 @@ while True:
                     progress: false,
                     history: true,
 
-                    theme: 'default'
+                    theme: 'default',
+
+                    dependencies: [
+                        {src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; }},
+                        {src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); }},
+                        {src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; }}
+                    ]
                 });
             }());
         </script>
