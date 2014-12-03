@@ -11,11 +11,17 @@
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css" />
         <link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css" />
 
+        <link rel="stylesheet" href="styles/highlighting.css" />
+
         <style>
             .reveal pre {
                 padding: 0.8em;
                 background: rgba(10, 10, 10, 0.7);
                 line-height: 1.4;
+            }
+
+            .reveal pre code {
+                padding: 0;
             }
         </style>
     </head>
@@ -175,7 +181,7 @@
                 </section>
 
                 <section data-background="rgb(207, 0, 15)">
-                    <pre><code># look.py
+                    <pre><code class="python"># look.py
 from __future__ import print_function
 
 def look_at_things(R):
@@ -183,7 +189,7 @@ def look_at_things(R):
     print("I can see", len(markers), "markers:")
     return len(markers)</code></pre>
 
-                    <pre><code># robot.py
+                    <pre><code class="python"># robot.py
 from sr import *
 import look.py
 
@@ -308,7 +314,7 @@ while True
                 </section>
 
                 <section data-background="rgb(142, 68, 173)">
-                    <pre><code>from sr.robot import *
+                    <pre><code class="python">from sr.robot import *
 import time
 
 R = Robot()
