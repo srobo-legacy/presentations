@@ -10,6 +10,14 @@
         <link rel="icon" href="images/icon.png" />
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css" />
         <link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css" />
+
+        <style>
+            .reveal pre {
+                padding: 0.8em;
+                background: rgba(10, 10, 10, 0.7);
+                line-height: 1.4;
+            }
+        </style>
     </head>
 
     <body>
@@ -164,17 +172,43 @@
 
                 <section data-background="rgb(207, 0, 15)">
                     <h1>This code doesn't compile.</h1>
-                    <h2>sr2015-techday1-quiz-challenge1 @ SRZ</h2>
+                </section>
+
+                <section data-background="rgb(207, 0, 15)">
+                    <pre># look.py
+from __future__ import print_function
+
+def look_at_things(R):
+    markers = R.see
+    print("I can see", len(markers), "markers:")
+    return len(markers)</pre>
+
+                    <pre># robot.py
+from sr import *
+import look.py
+
+R=Robot()
+
+while True
+    if look.look_at_things():
+       R.motors[0].m0 = 25
+       R.motors[1].m0 = 25
+       time.sleep(2,5)
+       R.motors[0].m0 = 0
+       R.motors[1].m0 = 0
+       …</pre>
                 </section>
 
                 <section data-background="rgb(207, 0, 15)">
                     <ul>
                         <li><code>from sr import *</code></li>
+                        <li><code>R.see</code> is a function</li>
                         <li><code>import look.py</code> shouldn't have extension</li>
                         <li><code>while True</code> missing colon</li>
                         <li><code>R.motors[x].m0 = y</code> should use the <code>.power</code> attribute</li>
                         <li>Missing <code>import time</code></li>
                         <li><code>time.sleep(2,5)</code> should have a full stop</li>
+                        <li>Indentation is wrong after the <code>if</code> statement</li>
                     </ul>
                 </section>
 
@@ -195,92 +229,170 @@
                     </p>
                 </section>
 
-                <section>
+                <section data-background="rgb(145, 61, 136)">
                     <h1>Question 12</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(145, 61, 136)">
                     <h1>“Are we allowed to block/cover markers?”</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(145, 61, 136)">
+                    <p>That would be unsportsmanlike and <em>possibly</em> breaking the rules:</p>
+                    <img src="images/intentionally-damage-rule.png" />
+                </section>
+
+                <section data-background="rgb(37, 116, 169)">
                     <h1>Question 13</h1>
                 </section>
 
-                <section>
-                    <h1>“What is the voltage output of the motor board?”</h1>
+                <section data-background="rgb(37, 116, 169)">
+                    <h1>“What is the output voltage of the motor board?”</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(37, 116, 169)">
+                    <h1>11.1V ± 15%</h1>
+                </section>
+
+                <section data-background="rgb(211, 84, 0)">
                     <h1>Question 14</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(211, 84, 0)">
                     <h1>“How does the robot know what zone it is starting in?”</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(211, 84, 0)">
+                    <h1><code>R.zone</code></h1>
+                    <p><code>docs/programming/sr/#OtherRobotAttributes</code></p>
+                </section>
+
+                <section data-background="rgb(30, 130, 76)">
                     <h1>Question 15</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(30, 130, 76)">
                     <h1>What is the servo value range?</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(30, 130, 76)">
+                    <h1><code>-100.0 to 100.0</code></h1>
+                </section>
+
+                <section data-background="rgb(239, 72, 54)">
                     <h1>Question 16</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(239, 72, 54)">
                     <h1>“My tablet isn't connecting to the robot.”</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(239, 72, 54)">
+                    <ul>
+                        <li>Is it connected to a different WiFi network?</li>
+                        <li>Is it even connected to the robot WiFi?</li>
+                        <li>What happens when you tap on the ‘Student Robotics’ app?</li>
+                        <li>What happens if you manually go to <code>http://robot.sr</code>?</li>
+                        <li>Is WiFi enabled?</li>
+                        <li>Try manually connecting using the WiFi key in <code>wifi.yaml</code>.</li>
+                    </ul>
+                </section>
+
+                <section data-background="rgb(142, 68, 173)">
                     <h1>Question 17</h1>
                 </section>
 
-                <section>
-                    <h1>“My battery has a bulge…”</h1>
+                <section data-background="rgb(142, 68, 173)">
+                    <h1>The robot wants to turn a servo!</h1>
+                    <p>Write the code to do this.</p>
+                </section data-background="rgb(142, 68, 173)">
+
+                <section data-background="rgb(142, 68, 173)">
+                    <pre>from sr.robot import *
+import time
+
+R = Robot()
+
+while True:
+    R.servos[0][0] = 50.0
+    time.sleep(1)
+    R.servos[0][0] = -50.0
+    time.sleep(1)</pre>
                 </section>
 
-                <section>
+                <section data-background="rgb(20, 20, 20)">
                     <h1>Question 18</h1>
                 </section>
 
-                <section>
-                    <h1>What are the scores of each robot for this final result?</h1>
+                <section data-background="rgb(20, 20, 20)">
+                    <h1>“My battery has a bulge…”</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(20, 20, 20)">
+                    <h2>Place in a bucket of salty water <strong>immediately</strong>.</h2>
+                </section>
+
+                <section data-background="rgb(4, 147, 114)">
                     <h1>Question 19</h1>
                 </section>
 
-                <section>
-                    <h1>How big are the markers?</h1>
+                <section data-background="rgb(4, 147, 114)">
+                    <h1>What are the scores of each robot for this final result?</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(4, 147, 114)">
+                    <img class="stretch" src="images/game-example.png" />
+                </section>
+
+                <section data-background="rgb(4, 147, 114)">
+                    <ul>
+                        <li>Zone 0 has no flags, zone 1 has two, zone 2 has one and zone 3 has two.</li>
+                        <li>The zones have the same game points as the number of flags.</li>
+                        <li>Zone 1 and 3 are tied for first place, so they get 7 league points.</li>
+                        <li>Zone 2 came third, so they get 4 league points.</li>
+                        <li>Zone 0 came last, however their robot didn't even turn up, so they get 0 league points.</li>
+                    </ul>
+                </section>
+
+                <section data-background="rgb(230, 126, 34)">
                     <h1>Question 20</h1>
                 </section>
 
-                <section>
-                    <h1>What is the configuration for the robot markers?</h1>
+                <section data-background="rgb(230, 126, 34)">
+                    <h1>What are the sizes of the various markers?</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(230, 126, 34)">
+                    <img src="images/marker-sizes.png" />
+                </section>
+
+                <section data-background="rgb(58, 83, 155)">
                     <h1>Question 21</h1>
                 </section>
 
-                <section>
-                    <h1>Which team has most likely won the first robot movement award?</h1>
+                <section data-background="rgb(58, 83, 155)">
+                    <h1>Which team has won the first movement award?</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(58, 83, 155)">
+                    <img src="images/first-movement-award.png" />
+                </section>
+
+                <section data-background="rgb(210, 82, 127)">
                     <h1>Question 22</h1>
                 </section>
 
-                <section>
+                <section data-background="rgb(210, 82, 127)">
                     <h1>What are the flag adornments going to look like?</h1>
+                </section>
+
+                <section data-background="rgb(210, 82, 127)">
+                    <ul>
+                        <li>Unknown for sure</li>
+                        <li>Being discussed at the moment</li>
+                        <li>Possibly depicting old games</li>
+                        <li>Don't rely on them</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -326,12 +438,6 @@
                 <section data-background="rgb(247, 202, 24)">
                     <h1>That's all folks!</h1>
                 </section>
-
-                <!--
-                 - This robot wants to turn a servo! (code is in the IDE: challenge-robot2 Team: SRZ)
-                 - This robot wants to turn the motors! (code: challenge-robot3 team: SRZ)
-                 - This robot wants to look and react! (code: challenge-robot4 team: SRZ robot drives and stops a motor if it sees a token)
-                -->
             </div>
         </div>
 
@@ -344,8 +450,7 @@
                     progress: false,
                     history: true,
 
-                    theme: 'default',
-                    transition: 'linear'
+                    theme: 'default'
                 });
             }());
         </script>
