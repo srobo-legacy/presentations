@@ -47,40 +47,8 @@
                     </p>
                 </section>
 
-                <section data-background="rgb(207, 0, 15)">
-                    <h1>Question 1</h1>
-                </section>
-
-                <section data-background="rgb(207, 0, 15)">
-                    <h1>What are the dimensions of the arena, barriers and zones?</h1>
-                </section>
-
-                <section data-background="rgb(207, 0, 15)">
-                    <img class="stretch" src="images/arena.png" />
-                </section>
-
-                <section data-background="rgb(38, 166, 91)">
-                    <h1>Question 2</h1>
-                </section>
-
-                <section data-background="rgb(38, 166, 91)">
-                    <h1>“Why doesn’t my motor turn?”</h1>
-                </section>
-
-                <section data-background="rgb(38, 166, 91)">
-                    <ul>
-                        <li>Is it definitely plugged in?</li>
-                        <li>Does the code make sense?</li>
-                        <li>Is the robot running code in the first place?</li>
-                        <li>Has the motor board got power?</li>
-                        <li>Is the motor broken?</li>
-                        <li>Does it work with simple code?</li>
-                        <li>Is the polarity correct?</li>
-                    </ul>
-                </section>
-
                 <section data-background="rgb(232, 126, 4)">
-                    <h1>Question 3</h1>
+                    <h1>Question 1</h1>
                 </section>
 
                 <section data-background="rgb(232, 126, 4)">
@@ -89,6 +57,38 @@
 
                 <section data-background="rgb(232, 126, 4)">
                     <img src="images/flag-specifications.png" />
+                </section>
+
+                <section data-background="rgb(38, 166, 91)">
+                    <h1>Question 2</h1>
+                </section>
+
+                <section data-background="rgb(38, 166, 91)">
+                    <h1>“Why doesn’t my servo turn?”</h1>
+                </section>
+
+                <section data-background="rgb(38, 166, 91)">
+                    <ul>
+                        <li>Is it definitely plugged in?</li>
+                        <li>Does the code make sense?</li>
+                        <li>Is the robot running code in the first place?</li>
+                        <li>Has the servo board got power?</li>
+                        <li>Is the servo broken?</li>
+                        <li>Does it work with simple code?</li>
+                        <li>Is the polarity correct?</li>
+                    </ul>
+                </section>
+
+                <section data-background="rgb(207, 0, 15)">
+                    <h1>Question 3</h1>
+                </section>
+
+                <section data-background="rgb(207, 0, 15)">
+                    <h1>What are the dimensions of the arena, barriers and zones?</h1>
+                </section>
+
+                <section data-background="rgb(207, 0, 15)">
+                    <img class="stretch" src="images/arena.png" />
                 </section>
 
                 <section data-background="rgb(102, 51, 153)">
@@ -154,7 +154,7 @@ def look_at_things(R):
 from sr import *
 import look.py
 
-R=Robot()
+R = robot()
 
 while True
     if look.look_at_things():
@@ -169,6 +169,7 @@ while True
                 <section data-background="rgb(207, 0, 15)">
                     <ul>
                         <li><code>from sr import *</code></li>
+                        <li><code>robot</code> should be <code>Robot</code></li>
                         <li><code>R.see</code> is a function</li>
                         <li><code>import look.py</code> shouldn't have extension</li>
                         <li><code>while True</code> missing colon</li>
@@ -230,7 +231,7 @@ while True
                 </section>
 
                 <section data-background="rgb(142, 68, 173)">
-                    <h1>The robot wants to turn a servo!</h1>
+                    <h1>The robot wants to run a motor!</h1>
                     <p>Write the code to do this.</p>
                 </section>
 
@@ -241,9 +242,9 @@ import time
 R = Robot()
 
 while True:
-    R.servos[0][0] = 50
+    R.motors[0].m0.power = 50
     time.sleep(1)
-    R.servos[0][0] = -50
+    R.motors[0].m0.power = 0
     time.sleep(1)</code></pre>
                 </section>
 
@@ -295,7 +296,7 @@ while True:
                 </section>
 
                 <section data-background="rgb(207, 0, 15)">
-                    <h1>Question 16</h1>
+                    <h1>Question 15</h1>
                 </section>
 
                 <section data-background="rgb(207, 0, 15)">
@@ -316,6 +317,68 @@ while True:
                 <section data-background="rgb(210, 77, 87)">
                     <h1>First set of questions over!</h1>
                     <p>Who gets <strong>elliminated</strong>?</p>
+                </section>
+
+                <section data-background="rgb(211, 84, 0)">
+                    <h1>Question 16</h1>
+                </section>
+
+                <section data-background="rgb(211, 84, 0)">
+                    <h2>What do the following kit PCB colours mean:</h2>
+                    <ul>
+                        <li>Blue?</li>
+                        <li>Red?</li>
+                        <li>Green?</li>
+                    </ul>
+                </section>
+
+                <section data-background="rgb(211, 84, 0)">
+                    <ul>
+                        <li><strong>Blue:</strong> Team Kit</li>
+                        <li><strong>Red:</strong> Development Kit</li>
+                        <li><strong>Green:</strong> Commercial</li>
+                    </ul>
+                </section>
+
+                <section data-background="rgb(219, 10, 91)">
+                    <h1>Question 17</h1>
+                </section>
+
+                <section data-background="rgb(219, 10, 91)">
+                    <h1>Why can't teams use ruggeduino pins 0 and 1?</h1>
+                </section>
+
+                <section data-background="rgb(219, 10, 91)">
+                    <h2>
+                        Those are reserved for serial communications with the
+                        brain board.
+                    </h2>
+                </section>
+
+                <section data-background="rgb(37, 116, 169)">
+                    <h1>Question 18</h1>
+                </section>
+
+                <section data-background="rgb(37, 116, 169)">
+                    <h1>Run code which prints the following to the log.</h1>
+                    <br />
+                    <h2><code>Robots are cool!</code></h2>
+                </section>
+
+                <section data-background="rgb(30, 130, 76)">
+                    <h1>Question 19</h1>
+                </section>
+
+                <section data-background="rgb(30, 130, 76)">
+                    <h1>Run code which gets your tudor to move 1m.</h1>
+                </section>
+
+                <section data-background="rgb(219, 10, 91)">
+                    <h1>Question 20</h1>
+                </section>
+
+                <section data-background="rgb(219, 10, 91)">
+                    <h1>Run code which gets your tudor to move in a 1×1m square.</h1>
                 </section>
 
                 <section data-background="rgb(247, 202, 24)">
